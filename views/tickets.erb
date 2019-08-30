@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Board</h1>
+    <% Ticket.all_in_columns.each do |column, tickets| %>
+    <h2><%= column %></h2>
+    <section>
+        <ul>
+        <% tickets.each do |ticket| %>
+        <p><%= ticket.name %></p>
+        <% end %>
+        </ul>
+    </section>
+    <% end %>
+</body>
+</html>

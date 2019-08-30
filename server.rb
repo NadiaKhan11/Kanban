@@ -1,4 +1,5 @@
 require "sinatra"
+require "active_record"
 require "sinatra/activerecord"
 require "json"
 
@@ -9,9 +10,7 @@ class Server < Sinatra::Base
         erb :index
     end
 
-    get '/columns' do
-        columns = Ticket.all.group_by { |ticket| ticket.column }
-        columns = columns.map { |col| [col.first.column, col] }.to_h
-        column.to_json
+    get '/tickets' do
+        erb :tickets
     end
 end
